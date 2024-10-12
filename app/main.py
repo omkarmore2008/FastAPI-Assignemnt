@@ -13,5 +13,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def root():
+    return {"message": "Hello Team!"}
+
 app.include_router(items.router)
 app.include_router(clock_in.router)
